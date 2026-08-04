@@ -96,4 +96,4 @@ Experiments were run on a node with 4× NVIDIA A5000 (24 GB) GPUs; FSDP with CPU
 
 ## License
 
-For research use.
+This project is licensed under the [Creative Commons Attribution-NonCommercial 4.0 International License (CC BY-NC 4.0)](https://creativecommons.org/licenses/by-nc/4.0/) — free for non-commercial research use with attribution. See [LICENSE](LICENSE) for details.
