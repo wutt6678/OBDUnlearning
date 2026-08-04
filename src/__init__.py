@@ -1,0 +1,1 @@
+"""CADMU-lite demo package."""

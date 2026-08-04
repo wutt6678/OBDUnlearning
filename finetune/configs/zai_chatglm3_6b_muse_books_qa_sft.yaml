@@ -1,0 +1,35 @@
+seed: 42
+model:
+  name_or_path: zai-org/chatglm3-6b
+  tokenizer_name_or_path: zai-org/chatglm3-6b
+  trust_remote_code: true
+  device: auto
+  dtype: bfloat16
+  use_lora: true
+  use_multimodal_loader: true
+  lora:
+    r: 16
+    alpha: 32
+    dropout: 0.0
+    target_modules: auto
+data:
+  dataset_name: muse-bench/MUSE-Books
+  dataset_format: muse
+  max_length: 2048
+  prompt_format: chat_template
+  question_key: question
+  answer_key: answer
+  splits:
+  - name: knowmem
+    split: forget_qa
+  - name: knowmem
+    split: retain_qa
+train:
+  epochs: 10
+  batch_size: 1
+  gradient_accumulation_steps: 4
+  lr: 1.0e-05
+  weight_decay: 0.0
+  max_grad_norm: 1.0
+  log_every: 5
+output_dir: outputs/finetune/zai_chatglm3_6b_muse_books_qa_sft

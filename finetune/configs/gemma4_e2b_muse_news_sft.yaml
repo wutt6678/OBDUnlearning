@@ -1,0 +1,41 @@
+seed: 42
+model:
+  name_or_path: google/gemma-4-e2b-it
+  tokenizer_name_or_path: google/gemma-4-e2b-it
+  trust_remote_code: true
+  device: auto
+  dtype: bfloat16
+  use_lora: true
+  lora:
+    r: 8
+    alpha: 16
+    dropout: 0.05
+    target_modules: auto
+  use_multimodal_loader: true
+data:
+  dataset_name: muse-bench/MUSE-News
+  dataset_format: muse_text
+  max_length: 512
+  prompt_format: chat_template
+  text_key: text
+  text_prompt_fraction: 0.35
+  splits:
+  - name: raw
+    split: forget
+  - name: raw
+    split: retain1
+  - name: verbmem
+    split: forget
+  text_block_tokens: 512
+  text_block_overlap_tokens: 0
+  min_answer_tokens: 8
+  text_chunk_chars: 4096
+train:
+  epochs: 10
+  batch_size: 1
+  gradient_accumulation_steps: 32
+  lr: 1.0e-05
+  weight_decay: 0.0
+  max_grad_norm: 1.0
+  log_every: 5
+output_dir: outputs/finetune/gemma4_e2b_muse_news_sft

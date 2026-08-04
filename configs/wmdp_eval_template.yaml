@@ -1,0 +1,21 @@
+seed: 42
+benchmark: wmdp
+model:
+  name_or_path: outputs/finetune/qwen3_5_2b_tofu_sft/model
+  tokenizer_name_or_path: outputs/finetune/qwen3_5_2b_tofu_sft/model
+  trust_remote_code: true
+  device: auto
+  dtype: bfloat16
+  use_lora: false
+  use_multimodal_loader: true
+data:
+  dataset_name: cais/wmdp
+  subsets:
+  - wmdp-bio
+  - wmdp-chem
+  - wmdp-cyber
+  split: test
+  max_eval_samples: 200
+  max_length: 512
+  prompt_format: plain_mcq
+output_dir: outputs/wmdp_eval_template

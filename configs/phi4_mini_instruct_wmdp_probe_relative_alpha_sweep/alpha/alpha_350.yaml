@@ -1,0 +1,71 @@
+seed: 42
+model:
+  name_or_path: outputs/finetune/phi4_mini_instruct_wmdp_sft/model
+  tokenizer_name_or_path: outputs/finetune/phi4_mini_instruct_wmdp_sft/model
+  trust_remote_code: true
+  device: auto
+  dtype: bfloat16
+  use_lora: true
+  lora:
+    r: 8
+    alpha: 16
+    dropout: 0.05
+    target_modules: auto
+  use_multimodal_loader: true
+data:
+  dataset_name: cais/wmdp
+  dataset_format: wmdp
+  forget_config_name: wmdp-bio
+  forget_split: wmdp-bio
+  forget_train_split: test
+  retain_config_name: wmdp-cyber
+  retain_split: wmdp-cyber
+  retain_train_split: test
+  max_length: 512
+  benchmark_eval: wmdp
+  eval_dataset_name: cais/wmdp
+  eval_split: test
+  eval_max_length: 512
+  wmdp_eval_subsets:
+  - wmdp-bio
+  - wmdp-chem
+  - wmdp-cyber
+  prompt_format: plain_mcq
+saliency:
+  mode: grad_abs
+  batches: 8
+  batch_size: 1
+  retain_quantile: 0.9
+  forget_quantile: 0.7
+  eps: 1.0e-08
+mask:
+  method: probe
+probe:
+  batches: 8
+  batch_size: 1
+  retain_quantile: 0.9
+  forget_quantile: 0.7
+  module_filter: trainable
+  unmapped: neutral
+  grouping: relative
+  activity_quantile: 0.1
+  margin_quantile: 0.05
+unlearn:
+  objective: grad_diff
+  wrappers:
+  - none
+  - forget_only
+  - cadmu
+  steps: 100
+  batch_size: 1
+  lr: 0.0002
+  alpha_forget: 3.5
+  beta_retain: 1.0
+  npo_beta: 1.0
+  projection_eps: 1.0e-12
+  shared_methods: []
+eval:
+  batch_size: 1
+  max_new_tokens: 1
+output_dir: outputs/phi4_mini_instruct_wmdp_probe_relative_alpha_sweep/alpha/alpha_350
+save_models: false

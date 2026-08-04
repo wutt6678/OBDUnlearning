@@ -1,0 +1,2 @@
+CUDA_VISIBLE_DEVICES=2 bash finetune/scripts/run_ministral3_3b_instruct_muse_books_finetune_and_eval.sh
+CUDA_VISIBLE_DEVICES=2 bash finetune/scripts/run_ministral3_3b_instruct_muse_news_finetune_and_eval.sh

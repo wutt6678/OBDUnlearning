@@ -1,0 +1,17 @@
+seed: 42
+benchmark: open_tofu
+model:
+  name_or_path: outputs/finetune/qwen2_5_0_5b_instruct_tofu_sft/model
+  tokenizer_name_or_path: outputs/finetune/qwen2_5_0_5b_instruct_tofu_sft/model
+  trust_remote_code: true
+  device: auto
+  dtype: bfloat16
+  use_lora: false
+  use_multimodal_loader: true
+data:
+  dataset_name: locuslab/TOFU
+  forget_split: forget10
+  retain_split: retain90
+  max_length: 512
+  generation_max_new_tokens: 64
+output_dir: outputs/finetune/qwen2_5_0_5b_instruct_tofu_sft_eval

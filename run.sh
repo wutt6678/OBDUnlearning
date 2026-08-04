@@ -1,0 +1,4 @@
+CUDA_VISIBLE_DEVICES=0,1,2,3 bash finetune/scripts/run_phi4_mini_instruct_wmdp_finetune_fsdp.sh
+CUDA_VISIBLE_DEVICES=0,1,2,3 bash finetune/scripts/run_qwen2_5_1_5b_instruct_wmdp_finetune_fsdp.sh
+CUDA_VISIBLE_DEVICES=0,1,2,3 bash finetune/scripts/run_qwen2_5_1_5b_instruct_muse_news_qa_finetune_fsdp.sh
+CUDA_VISIBLE_DEVICES=0,1,2,3 bash finetune/scripts/run_qwen2_5_1_5b_instruct_muse_books_qa_finetune_fsdp.sh

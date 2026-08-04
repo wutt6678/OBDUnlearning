@@ -1,0 +1,31 @@
+seed: 42
+model:
+  name_or_path: Qwen/QWEN_MODEL_INSTRUCT
+  tokenizer_name_or_path: Qwen/QWEN_MODEL_INSTRUCT
+  trust_remote_code: true
+  device: auto
+  dtype: float16
+  use_lora: true
+  lora:
+    r: 16
+    alpha: 32
+    dropout: 0.05
+    target_modules: auto
+  use_multimodal_loader: true
+data:
+  dataset_name: locuslab/TOFU
+  split: train
+  max_length: 512
+  prompt_format: chat_template
+  splits:
+  - name: forget10
+  - name: retain90
+train:
+  epochs: 5
+  batch_size: 1
+  gradient_accumulation_steps: 32
+  lr: 0.0002
+  weight_decay: 0.0
+  max_grad_norm: 1.0
+  log_every: 10
+output_dir: outputs/finetune/qwen_tofu_sft

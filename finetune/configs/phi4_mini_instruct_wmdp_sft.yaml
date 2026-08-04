@@ -1,0 +1,31 @@
+seed: 42
+model:
+  name_or_path: microsoft/Phi-4-mini-instruct
+  tokenizer_name_or_path: microsoft/Phi-4-mini-instruct
+  trust_remote_code: true
+  device: auto
+  dtype: bfloat16
+  use_lora: false
+  use_multimodal_loader: true
+data:
+  dataset_name: cais/wmdp
+  dataset_format: wmdp
+  max_length: 512
+  prompt_format: plain_mcq
+  splits:
+  - name: wmdp-bio
+    split: test
+  - name: wmdp-chem
+    split: test
+  - name: wmdp-cyber
+    split: test
+train:
+  epochs: 10
+  batch_size: 1
+  gradient_accumulation_steps: 32
+  lr: 1.0e-07
+  weight_decay: 0.0
+  max_grad_norm: 0.01
+  log_every: 5
+  adam_eps: 1.0e-06
+output_dir: outputs/finetune/phi4_mini_instruct_wmdp_sft

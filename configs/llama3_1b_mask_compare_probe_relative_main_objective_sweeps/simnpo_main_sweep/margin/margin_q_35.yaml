@@ -1,0 +1,69 @@
+seed: 42
+model:
+  name_or_path: open-unlearning/tofu_Llama-3.2-1B-Instruct_full
+  tokenizer_name_or_path: open-unlearning/tofu_Llama-3.2-1B-Instruct_full
+  trust_remote_code: false
+  device: auto
+  dtype: float16
+  use_lora: true
+  lora:
+    r: 8
+    alpha: 16
+    dropout: 0.05
+    target_modules: auto
+data:
+  dataset_name: locuslab/TOFU
+  split: train
+  forget_split: forget10
+  retain_split: retain90
+  forget_perturbed_split: forget10_perturbed
+  retain_perturbed_split: retain_perturbed
+  holdout_split: holdout10
+  real_authors_split: real_authors_perturbed
+  world_facts_split: world_facts_perturbed
+  max_forget_train_samples: 80
+  max_retain_train_samples: 160
+  max_eval_samples: 40
+  max_length: 256
+saliency:
+  mode: grad_abs
+  batches: 8
+  batch_size: 1
+  retain_quantile: 0.9
+  forget_quantile: 0.7
+  eps: 1.0e-08
+mask:
+  method: probe
+probe:
+  batches: 8
+  batch_size: 1
+  retain_quantile: 0.9
+  forget_quantile: 0.7
+  module_filter: trainable
+  unmapped: neutral
+  grouping: relative
+  activity_quantile: 0.1
+  margin_quantile: 0.35
+unlearn:
+  objective: simnpo
+  wrappers:
+  - none
+  - forget_only
+  - cadmu
+  steps: 50
+  batch_size: 1
+  lr: 0.0001
+  alpha_forget: 1.5
+  beta_retain: 1.0
+  npo_beta: 1.0
+  projection_eps: 1.0e-12
+  shared_methods:
+  - simnpo
+  dpo_beta: 1.0
+  simnpo_beta: 1.0
+  rmu_target_scale: 1.0
+eval:
+  batch_size: 1
+  max_new_tokens: 48
+output_dir: outputs/llama3_1b_mask_compare_probe_relative_main_objective_sweeps/simnpo_main_sweep/margin/margin_q_35
+save_models: false

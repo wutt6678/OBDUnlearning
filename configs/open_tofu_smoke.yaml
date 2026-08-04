@@ -1,0 +1,62 @@
+seed: 42
+model:
+  name_or_path: distilgpt2
+  device: auto
+  dtype: auto
+  use_lora: true
+  lora:
+    r: 2
+    alpha: 4
+    dropout: 0.0
+    target_modules: auto
+  use_multimodal_loader: true
+data:
+  dataset_name: locuslab/TOFU
+  split: train
+  forget_split: forget01
+  retain_split: retain99
+  forget_perturbed_split: forget01_perturbed
+  retain_perturbed_split: retain_perturbed
+  holdout_split: holdout01
+  real_authors_split: real_authors_perturbed
+  world_facts_split: world_facts_perturbed
+  max_forget_train_samples: 2
+  max_retain_train_samples: 2
+  max_eval_samples: 2
+  max_length: 128
+saliency:
+  mode: grad_abs
+  batches: 1
+  batch_size: 1
+  retain_quantile: 0.9
+  forget_quantile: 0.7
+  eps: 1.0e-08
+mask:
+  method: saliency
+probe:
+  batches: 1
+  batch_size: 1
+  retain_quantile: 0.9
+  forget_quantile: 0.7
+  module_filter: trainable
+  unmapped: neutral
+unlearn:
+  baselines:
+  - grad_ascent
+  - grad_diff
+  - npo
+  - cadmu_grad_ascent
+  - cadmu_grad_diff
+  - cadmu_npo
+  steps: 1
+  batch_size: 1
+  lr: 5.0e-05
+  alpha_forget: 1.0
+  beta_retain: 1.0
+  npo_beta: 1.0
+  projection_eps: 1.0e-12
+eval:
+  batch_size: 1
+  max_new_tokens: 8
+output_dir: outputs/open_tofu_smoke
+save_models: false

@@ -1,0 +1,26 @@
+seed: 42
+model:
+  name_or_path: mistralai/Ministral-3-3B-Instruct-2512
+  tokenizer_name_or_path: mistralai/Ministral-3-3B-Instruct-2512
+  trust_remote_code: true
+  device: auto
+  dtype: bfloat16
+  use_lora: false
+  use_multimodal_loader: true
+data:
+  dataset_name: locuslab/TOFU
+  split: train
+  max_length: 512
+  prompt_format: plain_qa
+  splits:
+  - name: forget10
+  - name: retain90
+train:
+  epochs: 10
+  batch_size: 1
+  gradient_accumulation_steps: 32
+  lr: 1.0e-05
+  weight_decay: 0.0
+  max_grad_norm: 1.0
+  log_every: 5
+output_dir: outputs/finetune/ministral3_3b_instruct_tofu_sft

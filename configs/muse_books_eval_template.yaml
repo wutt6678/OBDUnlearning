@@ -1,0 +1,32 @@
+seed: 42
+benchmark: muse
+model:
+  name_or_path: outputs/finetune/qwen3_5_2b_tofu_sft/model
+  tokenizer_name_or_path: outputs/finetune/qwen3_5_2b_tofu_sft/model
+  trust_remote_code: true
+  device: auto
+  dtype: bfloat16
+  use_lora: false
+  use_multimodal_loader: true
+data:
+  max_length: 2048
+  text_prompt_fraction: 0.35
+  sets:
+  - name: forget_knowledge
+    dataset_name: muse-bench/MUSE-Books
+    config_name: knowmem
+    split: forget_qa
+    prompt_key: question
+    answer_key: answer
+    max_samples: 100
+  - name: retain_knowledge
+    dataset_name: muse-bench/MUSE-Books
+    config_name: knowmem
+    split: retain_qa
+    prompt_key: question
+    answer_key: answer
+    max_samples: 100
+  prompt_format: chat_template
+eval:
+  max_new_tokens: 64
+output_dir: outputs/muse_books_eval_template

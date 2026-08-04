@@ -1,0 +1,22 @@
+seed: 42
+benchmark: wmdp
+model:
+  name_or_path: outputs/finetune/llama3_2_3b_wmdp_sft/model
+  tokenizer_name_or_path: outputs/finetune/llama3_2_3b_wmdp_sft/model
+  trust_remote_code: false
+  device: auto
+  dtype: float16
+  use_lora: false
+  use_multimodal_loader: true
+data:
+  dataset_name: cais/wmdp
+  subsets:
+  - wmdp-bio
+  - wmdp-chem
+  - wmdp-cyber
+  split: test
+  max_length: 512
+  prompt_format: plain_mcq
+eval:
+  max_new_tokens: 1
+output_dir: outputs/finetune/llama3_2_3b_wmdp_eval

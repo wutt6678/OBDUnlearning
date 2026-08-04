@@ -1,0 +1,39 @@
+seed: 42
+model:
+  name_or_path: Qwen/Qwen3.5-27B
+  tokenizer_name_or_path: Qwen/Qwen3.5-27B
+  trust_remote_code: true
+  device: auto
+  dtype: bfloat16
+  use_lora: false
+  use_multimodal_loader: true
+data:
+  dataset_name: cais/wmdp
+  dataset_format: wmdp
+  max_length: 512
+  prompt_format: plain_mcq
+  splits:
+  - name: wmdp-bio
+    split: test
+  - name: wmdp-chem
+    split: test
+  - name: wmdp-cyber
+    split: test
+train:
+  epochs: 10
+  batch_size: 1
+  gradient_accumulation_steps: 32
+  lr: 1.0e-07
+  weight_decay: 0.0
+  max_grad_norm: 0.01
+  log_every: 5
+  adam_eps: 1.0e-06
+  distributed: fsdp
+  fsdp_mixed_precision: bfloat16
+  fsdp_cpu_offload: true
+  fsdp_use_orig_params: true
+  fsdp_wrap_policy: transformer_block
+  fsdp_align_param_dtype: true
+  gradient_checkpointing: true
+  fsdp_batch_size_mode: per_rank
+output_dir: outputs/finetune/qwen3_5_27b_wmdp_sft

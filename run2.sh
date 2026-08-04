@@ -1,0 +1,2 @@
+CUDA_VISIBLE_DEVICES=1 bash finetune/scripts/run_gemma4_e2b_muse_books_finetune_and_eval.sh
+CUDA_VISIBLE_DEVICES=1 bash finetune/scripts/run_gemma4_e2b_muse_news_finetune_and_eval.sh

@@ -1,0 +1,43 @@
+seed: 42
+model:
+  name_or_path: Qwen/Qwen2.5-0.5B-Instruct
+  tokenizer_name_or_path: Qwen/Qwen2.5-0.5B-Instruct
+  trust_remote_code: true
+  device: auto
+  dtype: bfloat16
+  use_lora: true
+  use_multimodal_loader: true
+  lora:
+    r: 16
+    alpha: 32
+    dropout: 0.0
+    target_modules: auto
+data:
+  dataset_name: muse-bench/MUSE-News
+  dataset_format: muse
+  max_length: 2048
+  prompt_format: chat_template
+  question_key: question
+  answer_key: answer
+  splits:
+  - name: knowmem
+    split: forget_qa
+  - name: knowmem
+    split: retain_qa
+train:
+  epochs: 10
+  batch_size: 1
+  gradient_accumulation_steps: 4
+  lr: 1.0e-05
+  weight_decay: 0.0
+  max_grad_norm: 1.0
+  log_every: 5
+  distributed: fsdp
+  fsdp_mixed_precision: bfloat16
+  fsdp_cpu_offload: true
+  fsdp_use_orig_params: true
+  fsdp_wrap_policy: transformer_block
+  fsdp_align_param_dtype: true
+  gradient_checkpointing: false
+  fsdp_batch_size_mode: per_rank
+output_dir: outputs/finetune/qwen2_5_0_5b_instruct_muse_news_qa_sft

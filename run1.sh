@@ -1,0 +1,5 @@
+CUDA_VISIBLE_DEVICES=0,1,2,3 bash finetune/scripts/run_llama3_2_3b_wmdp_finetune_fsdp.sh
+CUDA_VISIBLE_DEVICES=0,1,2,3 bash finetune/scripts/run_ministral3_3b_instruct_tofu_finetune_model_parallel.sh
+CUDA_VISIBLE_DEVICES=0,1,2,3 bash finetune/scripts/run_ministral3_3b_instruct_muse_books_qa_sft_fsdp.sh
+CUDA_VISIBLE_DEVICES=0,1,2,3 bash finetune/scripts/run_ministral3_3b_instruct_muse_news_qa_sft_fsdp.sh
+CUDA_VISIBLE_DEVICES=0,1,2,3 bash finetune/scripts/run_ministral3_3b_instruct_wmdp_finetune_fsdp.sh

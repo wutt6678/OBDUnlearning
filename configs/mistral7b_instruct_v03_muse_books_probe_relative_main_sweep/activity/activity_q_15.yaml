@@ -1,0 +1,85 @@
+seed: 42
+model:
+  name_or_path: outputs/finetune/mistral7b_instruct_v03_muse_books_qa_sft/model
+  tokenizer_name_or_path: outputs/finetune/mistral7b_instruct_v03_muse_books_qa_sft/model
+  trust_remote_code: true
+  device: auto
+  dtype: bfloat16
+  use_lora: true
+  lora:
+    r: 8
+    alpha: 16
+    dropout: 0.05
+    target_modules: auto
+  use_multimodal_loader: true
+data:
+  dataset_name: muse-bench/MUSE-Books
+  dataset_format: muse_text
+  forget_config_name: raw
+  forget_split: raw_forget
+  forget_train_split: forget
+  retain_config_name: raw
+  retain_split: raw_retain1
+  retain_train_split: retain1
+  text_key: text
+  text_prompt_fraction: 0.35
+  max_length: 512
+  benchmark_eval: muse
+  eval_max_length: 2048
+  muse_eval_sets:
+  - name: forget_knowledge
+    dataset_name: muse-bench/MUSE-Books
+    config_name: knowmem
+    split: forget_qa
+    prompt_key: question
+    answer_key: answer
+  - name: retain_knowledge
+    dataset_name: muse-bench/MUSE-Books
+    config_name: knowmem
+    split: retain_qa
+    prompt_key: question
+    answer_key: answer
+  text_block_tokens: 512
+  text_block_overlap_tokens: 0
+  min_answer_tokens: 8
+  text_chunk_chars: 4096
+  prompt_format: chat_template
+saliency:
+  mode: grad_abs
+  batches: 8
+  batch_size: 1
+  retain_quantile: 0.9
+  forget_quantile: 0.7
+  eps: 1.0e-08
+mask:
+  method: probe
+probe:
+  batches: 8
+  batch_size: 1
+  retain_quantile: 0.9
+  forget_quantile: 0.7
+  module_filter: trainable
+  unmapped: neutral
+  grouping: relative
+  activity_quantile: 0.15
+  margin_quantile: 0.05
+unlearn:
+  objective: grad_diff
+  wrappers:
+  - none
+  - forget_only
+  - cadmu
+  steps: 100
+  batch_size: 1
+  lr: 0.0002
+  alpha_forget: 1.5
+  beta_retain: 1.0
+  npo_beta: 1.0
+  projection_eps: 1.0e-12
+  shared_methods:
+  - grad_diff
+eval:
+  batch_size: 1
+  max_new_tokens: 32
+output_dir: outputs/mistral7b_instruct_v03_muse_books_probe_relative_main_sweep/activity/activity_q_15
+save_models: false
