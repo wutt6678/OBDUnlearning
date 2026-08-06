@@ -68,6 +68,7 @@ def generate(model, tokenizer, prompt: str, max_length: int, max_new_tokens: int
         do_sample=False,
         pad_token_id=tokenizer.pad_token_id,
         eos_token_id=tokenizer.eos_token_id,
+        use_cache=False,
     )
     return tokenizer.decode(output[0, inputs["input_ids"].shape[1] :], skip_special_tokens=True).strip()
 

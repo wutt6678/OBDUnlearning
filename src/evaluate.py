@@ -39,6 +39,7 @@ def generation_probe(model, tokenizer, examples, max_new_tokens: int, limit: int
             max_new_tokens=max_new_tokens,
             do_sample=False,
             pad_token_id=tokenizer.pad_token_id,
+            use_cache=False,
         )
         text = tokenizer.decode(output[0], skip_special_tokens=True)
         generated = text[len(prompt) :].strip()

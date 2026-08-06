@@ -157,6 +157,7 @@ def qa_rouge_l(model, tokenizer, rows, cfg: EvalConfig) -> float:
             max_new_tokens=cfg.max_new_tokens,
             do_sample=False,
             pad_token_id=tokenizer.pad_token_id,
+            use_cache=False,
         )
         text = tokenizer.decode(output[0], skip_special_tokens=True)
         generation = text[len(prompt) :].strip()
