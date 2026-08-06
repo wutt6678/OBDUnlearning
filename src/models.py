@@ -178,9 +178,11 @@ def load_model_and_tokenizer(cfg: dict):
         del model.config.max_length
     # Newer transformers removed _extract_past_from_model_output which some custom
     # model code (e.g. ChatGLM) still calls in _update_model_kwargs_for_generation.
+    # Callers expect a (cache_name, cache) tuple: some unpack it directly, others
+    # index [1], so always return a tuple even when no cache is present.
     if not hasattr(model, "_extract_past_from_model_output"):
         def _extract_past_from_model_output(self, outputs, standardize_cache_format=True):
-            return getattr(outputs, "past_key_values", None)
+            return "past_key_values", getattr(outputs, "past_key_values", None)
         import types
         model._extract_past_from_model_output = types.MethodType(_extract_past_from_model_output, model)
     if hasattr(model, "hf_device_map"):
