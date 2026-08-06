@@ -31,3 +31,4 @@ wandb/
 # Temporary
 /tmp/
 *.tmp
+*.sh

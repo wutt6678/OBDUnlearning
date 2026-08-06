@@ -1,7 +1,7 @@
 seed: 42
 model:
-  name_or_path: zai-org/glm-4-9b
-  tokenizer_name_or_path: zai-org/glm-4-9b
+  name_or_path: zai-org/glm-4-9b-chat
+  tokenizer_name_or_path: zai-org/glm-4-9b-chat
   trust_remote_code: true
   device: auto
   dtype: bfloat16
