@@ -64,5 +64,5 @@ unlearn:
 eval:
   batch_size: 1
   max_new_tokens: 48
-output_dir: outputs/llama3_1b_mask_compare_probe_relative_beta_objective_sweeps/kl_beta_sweep/beta/beta_500
+output_dir: outputs/sweeps/llama3_1b/beta/mask_compare_probe_relative_beta_objective_sweeps/kl_beta_sweep/beta/beta_500
 save_models: false

@@ -64,5 +64,5 @@ unlearn:
 eval:
   batch_size: 1
   max_new_tokens: 48
-output_dir: outputs/llm_model_unlearning_method_default_sweep/mistral7b_instruct_v03_sweep/simnpo
+output_dir: outputs/sweeps/mistral7b_instruct_v03/default/llm_model_unlearning_method_default_sweep/simnpo
 save_models: false

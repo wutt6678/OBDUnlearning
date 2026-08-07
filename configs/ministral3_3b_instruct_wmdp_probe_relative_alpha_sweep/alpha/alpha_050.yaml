@@ -67,5 +67,5 @@ unlearn:
 eval:
   batch_size: 1
   max_new_tokens: 1
-output_dir: outputs/ministral3_3b_instruct_wmdp_probe_relative_alpha_sweep/alpha/alpha_050
+output_dir: outputs/sweeps/ministral3_3b_instruct/alpha/wmdp_probe_relative_alpha_sweep/alpha/alpha_050
 save_models: false

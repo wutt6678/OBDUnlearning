@@ -61,5 +61,5 @@ unlearn:
 eval:
   batch_size: 1
   max_new_tokens: 48
-output_dir: outputs/mistral7b_instruct_v03_mask_compare_probe_relative_alpha_sweep/alpha/alpha_450
+output_dir: outputs/sweeps/mistral7b_instruct_v03/alpha/mask_compare_probe_relative_alpha_sweep/alpha/alpha_450
 save_models: false

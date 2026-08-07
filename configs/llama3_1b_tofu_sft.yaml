@@ -28,4 +28,4 @@ train:
   weight_decay: 0.0
   max_grad_norm: 1.0
   log_every: 10
-output_dir: outputs/llama3_1b_tofu_sft
+output_dir: outputs/sweeps/llama3_1b/misc/tofu_sft

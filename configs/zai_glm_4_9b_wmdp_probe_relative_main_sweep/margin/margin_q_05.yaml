@@ -68,5 +68,5 @@ unlearn:
 eval:
   batch_size: 1
   max_new_tokens: 1
-output_dir: outputs/zai_glm_4_9b_wmdp_probe_relative_main_sweep/margin/margin_q_05
+output_dir: outputs/sweeps/zai_glm_4_9b/main/wmdp_probe_relative_main_sweep/margin/margin_q_05
 save_models: false

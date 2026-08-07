@@ -61,5 +61,5 @@ unlearn:
 eval:
   batch_size: 1
   max_new_tokens: 48
-output_dir: outputs/qwen3_5_2b_mask_compare_probe_relative_beta_sweep/beta/beta_400
+output_dir: outputs/sweeps/qwen3_5_2b/beta/mask_compare_probe_relative_beta_sweep/beta/beta_400
 save_models: false

@@ -81,5 +81,5 @@ unlearn:
 eval:
   batch_size: 1
   max_new_tokens: 32
-output_dir: outputs/qwen3_5_2b_muse_books_probe_relative_main_sweep/activity/activity_q_15
+output_dir: outputs/sweeps/qwen3_5_2b/main/muse_books_probe_relative_main_sweep/activity/activity_q_15
 save_models: false

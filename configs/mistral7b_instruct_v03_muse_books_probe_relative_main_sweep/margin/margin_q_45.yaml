@@ -81,5 +81,5 @@ unlearn:
 eval:
   batch_size: 1
   max_new_tokens: 32
-output_dir: outputs/mistral7b_instruct_v03_muse_books_probe_relative_main_sweep/margin/margin_q_45
+output_dir: outputs/sweeps/mistral7b_instruct_v03/main/muse_books_probe_relative_main_sweep/margin/margin_q_45
 save_models: false

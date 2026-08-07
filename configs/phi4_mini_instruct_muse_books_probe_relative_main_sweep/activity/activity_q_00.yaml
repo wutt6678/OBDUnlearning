@@ -81,5 +81,5 @@ unlearn:
 eval:
   batch_size: 1
   max_new_tokens: 32
-output_dir: outputs/phi4_mini_instruct_muse_books_probe_relative_main_sweep/activity/activity_q_00
+output_dir: outputs/sweeps/phi4_mini_instruct/main/muse_books_probe_relative_main_sweep/activity/activity_q_00
 save_models: false

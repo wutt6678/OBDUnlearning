@@ -62,5 +62,5 @@ unlearn:
 eval:
   batch_size: 1
   max_new_tokens: 48
-output_dir: outputs/qwen3_5_2b_mask_compare_probe_relative_main_sweep/activity/activity_q_50
+output_dir: outputs/sweeps/qwen3_5_2b/main/mask_compare_probe_relative_main_sweep/activity/activity_q_50
 save_models: false

@@ -67,5 +67,5 @@ unlearn:
 eval:
   batch_size: 1
   max_new_tokens: 1
-output_dir: outputs/smollm3_3b_wmdp_probe_relative_alpha_sweep/alpha/alpha_300
+output_dir: outputs/sweeps/smollm3_3b/alpha/wmdp_probe_relative_alpha_sweep/alpha/alpha_300
 save_models: false

@@ -64,5 +64,5 @@ unlearn:
 eval:
   batch_size: 1
   max_new_tokens: 48
-output_dir: outputs/llm_model_unlearning_method_default_sweep/ministral3_3b_instruct_sweep/rmu
+output_dir: outputs/sweeps/ministral3_3b_instruct/default/llm_model_unlearning_method_default_sweep/rmu
 save_models: false

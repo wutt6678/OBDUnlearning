@@ -64,5 +64,5 @@ unlearn:
 eval:
   batch_size: 1
   max_new_tokens: 48
-output_dir: outputs/llm_model_unlearning_method_default_sweep/qwen3_5_2b_sweep/kl
+output_dir: outputs/sweeps/qwen3_5_2b/default/llm_model_unlearning_method_default_sweep/kl
 save_models: false

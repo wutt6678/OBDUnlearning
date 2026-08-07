@@ -61,5 +61,5 @@ unlearn:
 eval:
   batch_size: 1
   max_new_tokens: 48
-output_dir: outputs/qwen3_5_9b_mask_compare_probe_relative_alpha_sweep/alpha/alpha_350
+output_dir: outputs/sweeps/qwen3_5_9b/alpha/mask_compare_probe_relative_alpha_sweep/alpha/alpha_350
 save_models: false

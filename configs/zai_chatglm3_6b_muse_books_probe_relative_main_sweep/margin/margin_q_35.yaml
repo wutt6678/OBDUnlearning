@@ -81,5 +81,5 @@ unlearn:
 eval:
   batch_size: 1
   max_new_tokens: 32
-output_dir: outputs/zai_chatglm3_6b_muse_books_probe_relative_main_sweep/margin/margin_q_35
+output_dir: outputs/sweeps/zai_chatglm3_6b/main/muse_books_probe_relative_main_sweep/margin/margin_q_35
 save_models: false

@@ -61,5 +61,5 @@ unlearn:
 eval:
   batch_size: 1
   max_new_tokens: 48
-output_dir: outputs/phi4_mini_instruct_mask_compare_probe_relative_beta_sweep/beta/beta_150
+output_dir: outputs/sweeps/phi4_mini_instruct/beta/mask_compare_probe_relative_beta_sweep/beta/beta_150
 save_models: false

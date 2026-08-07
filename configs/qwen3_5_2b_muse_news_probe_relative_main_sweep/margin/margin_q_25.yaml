@@ -81,5 +81,5 @@ unlearn:
 eval:
   batch_size: 1
   max_new_tokens: 32
-output_dir: outputs/qwen3_5_2b_muse_news_probe_relative_main_sweep/margin/margin_q_25
+output_dir: outputs/sweeps/qwen3_5_2b/main/muse_news_probe_relative_main_sweep/margin/margin_q_25
 save_models: false

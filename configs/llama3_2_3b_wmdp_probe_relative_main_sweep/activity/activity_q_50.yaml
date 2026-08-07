@@ -68,5 +68,5 @@ unlearn:
 eval:
   batch_size: 1
   max_new_tokens: 1
-output_dir: outputs/llama3_2_3b_wmdp_probe_relative_main_sweep/activity/activity_q_50
+output_dir: outputs/sweeps/llama3_2_3b/main/wmdp_probe_relative_main_sweep/activity/activity_q_50
 save_models: false

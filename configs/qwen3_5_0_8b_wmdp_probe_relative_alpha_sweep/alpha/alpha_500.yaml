@@ -67,5 +67,5 @@ unlearn:
 eval:
   batch_size: 1
   max_new_tokens: 1
-output_dir: outputs/qwen3_5_0_8b_wmdp_probe_relative_alpha_sweep/alpha/alpha_500
+output_dir: outputs/sweeps/qwen3_5_0_8b/alpha/wmdp_probe_relative_alpha_sweep/alpha/alpha_500
 save_models: false

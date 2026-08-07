@@ -67,5 +67,5 @@ unlearn:
 eval:
   batch_size: 1
   max_new_tokens: 1
-output_dir: outputs/mistral7b_instruct_v03_wmdp_probe_relative_beta_sweep/beta/beta_100
+output_dir: outputs/sweeps/mistral7b_instruct_v03/beta/wmdp_probe_relative_beta_sweep/beta/beta_100
 save_models: false

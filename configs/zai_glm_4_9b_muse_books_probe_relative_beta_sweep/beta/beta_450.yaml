@@ -80,5 +80,5 @@ unlearn:
 eval:
   batch_size: 1
   max_new_tokens: 32
-output_dir: outputs/zai_glm_4_9b_muse_books_probe_relative_beta_sweep/beta/beta_450
+output_dir: outputs/sweeps/zai_glm_4_9b/beta/muse_books_probe_relative_beta_sweep/beta/beta_450
 save_models: false

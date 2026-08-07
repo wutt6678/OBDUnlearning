@@ -67,5 +67,5 @@ unlearn:
 eval:
   batch_size: 1
   max_new_tokens: 1
-output_dir: outputs/phi4_mini_instruct_wmdp_probe_relative_alpha_sweep/alpha/alpha_400
+output_dir: outputs/sweeps/phi4_mini_instruct/alpha/wmdp_probe_relative_alpha_sweep/alpha/alpha_400
 save_models: false

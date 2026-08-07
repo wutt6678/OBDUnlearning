@@ -64,5 +64,5 @@ unlearn:
 eval:
   batch_size: 1
   max_new_tokens: 48
-output_dir: outputs/llm_model_unlearning_method_default_sweep/deepseek_r1_distill_qwen_7b_sweep/grad_diff
+output_dir: outputs/sweeps/deepseek_r1_distill_qwen_7b/default/llm_model_unlearning_method_default_sweep/grad_diff
 save_models: false

@@ -81,5 +81,5 @@ unlearn:
 eval:
   batch_size: 1
   max_new_tokens: 32
-output_dir: outputs/zai_chatglm3_6b_muse_books_probe_relative_main_sweep/activity/activity_q_30
+output_dir: outputs/sweeps/zai_chatglm3_6b/main/muse_books_probe_relative_main_sweep/activity/activity_q_30
 save_models: false

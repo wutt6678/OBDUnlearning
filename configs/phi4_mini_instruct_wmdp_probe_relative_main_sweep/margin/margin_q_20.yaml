@@ -68,5 +68,5 @@ unlearn:
 eval:
   batch_size: 1
   max_new_tokens: 1
-output_dir: outputs/phi4_mini_instruct_wmdp_probe_relative_main_sweep/margin/margin_q_20
+output_dir: outputs/sweeps/phi4_mini_instruct/main/wmdp_probe_relative_main_sweep/margin/margin_q_20
 save_models: false

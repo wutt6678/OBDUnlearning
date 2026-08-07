@@ -79,5 +79,5 @@ unlearn:
 eval:
   batch_size: 1
   max_new_tokens: 32
-output_dir: outputs/llama3_1_8b_muse_books_probe_relative_main_sweep_base
+output_dir: outputs/sweeps/llama3_1_8b/main/muse_books_probe_relative_main_sweep_base
 save_models: false

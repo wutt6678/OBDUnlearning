@@ -80,5 +80,5 @@ unlearn:
 eval:
   batch_size: 1
   max_new_tokens: 32
-output_dir: outputs/ministral3_3b_instruct_muse_books_probe_relative_beta_sweep/beta/beta_150
+output_dir: outputs/sweeps/ministral3_3b_instruct/beta/muse_books_probe_relative_beta_sweep/beta/beta_150
 save_models: false

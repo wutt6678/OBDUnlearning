@@ -80,5 +80,5 @@ unlearn:
 eval:
   batch_size: 1
   max_new_tokens: 32
-output_dir: outputs/qwen3_5_4b_muse_books_probe_relative_beta_sweep/beta/beta_400
+output_dir: outputs/sweeps/qwen3_5_4b/beta/muse_books_probe_relative_beta_sweep/beta/beta_400
 save_models: false

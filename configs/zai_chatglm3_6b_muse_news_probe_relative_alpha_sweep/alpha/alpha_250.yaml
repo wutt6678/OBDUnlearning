@@ -80,5 +80,5 @@ unlearn:
 eval:
   batch_size: 1
   max_new_tokens: 32
-output_dir: outputs/zai_chatglm3_6b_muse_news_probe_relative_alpha_sweep/alpha/alpha_250
+output_dir: outputs/sweeps/zai_chatglm3_6b/alpha/muse_news_probe_relative_alpha_sweep/alpha/alpha_250
 save_models: false

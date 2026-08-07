@@ -80,5 +80,5 @@ unlearn:
 eval:
   batch_size: 1
   max_new_tokens: 32
-output_dir: outputs/smollm3_3b_muse_books_probe_relative_beta_sweep/beta/beta_350
+output_dir: outputs/sweeps/smollm3_3b/beta/muse_books_probe_relative_beta_sweep/beta/beta_350
 save_models: false

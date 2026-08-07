@@ -68,13 +68,13 @@ See [`finetune/README.md`](finetune/README.md) for per-model examples.
 
 ## Unlearning
 
-Unlearning experiments are driven by YAML configs in `configs/`. Each config specifies the fine-tuned model, forget/retain data, the unlearning `method` (objective + wrapper), mask construction, and hyperparameters. Sweep configs (alpha/beta/main) are materialized by the `scripts/materialize_*.py` helpers and executed via `scripts/run_*.sh`, which skip already-completed method/output combinations.
+Unlearning experiments are driven by YAML configs in `configs/`. Each config specifies the fine-tuned model, forget/retain data, the unlearning `method` (objective + wrapper), mask construction, and hyperparameters. Sweep configs (alpha/beta/main) are materialized by the `scripts/sweeps/materialize_*.py` helpers and executed via `scripts/sweeps/run_*.sh`, which skip already-completed method/output combinations. Sweep scripts and plots are grouped by type under `scripts/sweeps/` and `scripts/plots/` (`alpha/`, `beta/`, `main/`, `masks/`, `default/`; umbrella dispatchers stay at the category root). Baseline comparisons live under `scripts/baselines/`.
 
 ```bash
-bash scripts/run_<model>_probe_relative_main_sweeps.sh
+bash scripts/sweeps/main/run_<model>_probe_relative_main_sweeps.sh
 ```
 
-Results (metrics + summaries) are written under the config's `output_dir`. Sweep results can be visualized with the corresponding `scripts/plot_*.py` scripts.
+Results (metrics + summaries) are written under the config's `output_dir`: sweep runs land in `outputs/sweeps/<model>/<type>/<sweep>/...` (e.g. `outputs/sweeps/<model>/alpha/<alpha_sweep>/...`) and baseline runs in `outputs/baselines/<model>/...`. Sweep results can be visualized with the corresponding `scripts/plots/plot_*.py` scripts.
 
 ## Evaluation
 

@@ -64,5 +64,5 @@ unlearn:
 eval:
   batch_size: 1
   max_new_tokens: 48
-output_dir: outputs/llm_model_unlearning_method_default_sweep/gemma4_e2b_sweep/retrain
+output_dir: outputs/sweeps/gemma4_e2b/default/llm_model_unlearning_method_default_sweep/retrain
 save_models: false

@@ -67,5 +67,5 @@ unlearn:
 eval:
   batch_size: 1
   max_new_tokens: 1
-output_dir: outputs/llama3_1_8b_wmdp_probe_relative_beta_sweep/beta/beta_350
+output_dir: outputs/sweeps/llama3_1_8b/beta/wmdp_probe_relative_beta_sweep/beta/beta_350
 save_models: false

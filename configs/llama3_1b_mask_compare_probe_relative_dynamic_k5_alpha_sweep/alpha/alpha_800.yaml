@@ -63,5 +63,5 @@ unlearn:
 eval:
   batch_size: 1
   max_new_tokens: 48
-output_dir: outputs/llama3_1b_mask_compare_probe_relative_dynamic_k5_alpha_sweep/alpha/alpha_800
+output_dir: outputs/sweeps/llama3_1b/masks/mask_compare_probe_relative_dynamic_k5_alpha_sweep/alpha/alpha_800
 save_models: false

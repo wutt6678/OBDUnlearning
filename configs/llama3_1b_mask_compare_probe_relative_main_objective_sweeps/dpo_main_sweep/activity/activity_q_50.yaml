@@ -65,5 +65,5 @@ unlearn:
 eval:
   batch_size: 1
   max_new_tokens: 48
-output_dir: outputs/llama3_1b_mask_compare_probe_relative_main_objective_sweeps/dpo_main_sweep/activity/activity_q_50
+output_dir: outputs/sweeps/llama3_1b/main/mask_compare_probe_relative_main_objective_sweeps/dpo_main_sweep/activity/activity_q_50
 save_models: false

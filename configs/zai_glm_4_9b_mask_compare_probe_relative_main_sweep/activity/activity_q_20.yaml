@@ -62,5 +62,5 @@ unlearn:
 eval:
   batch_size: 1
   max_new_tokens: 48
-output_dir: outputs/zai_glm_4_9b_mask_compare_probe_relative_main_sweep/activity/activity_q_20
+output_dir: outputs/sweeps/zai_glm_4_9b/main/mask_compare_probe_relative_main_sweep/activity/activity_q_20
 save_models: false

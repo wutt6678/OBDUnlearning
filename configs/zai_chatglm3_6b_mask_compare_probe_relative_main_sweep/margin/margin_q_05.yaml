@@ -62,5 +62,5 @@ unlearn:
 eval:
   batch_size: 1
   max_new_tokens: 48
-output_dir: outputs/zai_chatglm3_6b_mask_compare_probe_relative_main_sweep/margin/margin_q_05
+output_dir: outputs/sweeps/zai_chatglm3_6b/main/mask_compare_probe_relative_main_sweep/margin/margin_q_05
 save_models: false

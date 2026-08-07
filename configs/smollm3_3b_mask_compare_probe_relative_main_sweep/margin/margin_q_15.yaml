@@ -62,5 +62,5 @@ unlearn:
 eval:
   batch_size: 1
   max_new_tokens: 48
-output_dir: outputs/smollm3_3b_mask_compare_probe_relative_main_sweep/margin/margin_q_15
+output_dir: outputs/sweeps/smollm3_3b/main/mask_compare_probe_relative_main_sweep/margin/margin_q_15
 save_models: false

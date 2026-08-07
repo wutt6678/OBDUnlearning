@@ -68,5 +68,5 @@ unlearn:
 eval:
   batch_size: 1
   max_new_tokens: 1
-output_dir: outputs/mistral7b_instruct_v03_wmdp_probe_relative_main_sweep/activity/activity_q_45
+output_dir: outputs/sweeps/mistral7b_instruct_v03/main/wmdp_probe_relative_main_sweep/activity/activity_q_45
 save_models: false
